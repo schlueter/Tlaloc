@@ -22,13 +22,18 @@ Vagrant.configure('2') do |config|
     override.ssh.username = 'ubuntu'
   end
 
-  config.vm.provision :shell do |shell|
-    shell.inline = "echo '#{File.read('torrents')}' > /tmp/torrents"
-  end
-
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe 'tlaloc'
 
     chef.custom_config_path = 'ssl_fix.chef'
+    chef.json = {
+      aws: {
+        access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+      },
+      tlaloc: {
+        torrents: File.open('torrents').readlines.map{ |l| l.strip }
+      }
+    }
   end
 end
