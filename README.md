@@ -1,6 +1,6 @@
 # Tlaloc
 
-Tlaloc (named for [Tlaloc](http://en.wikipedia.org/wiki/Tlaloc), Aztec god of water) is a pipeline service for performing Chef runs on remote machines, sending out email notifications and placing arbitrary files (logs, compiled binaries, etc.) wherever you want.
+Tlaloc (named for [Tlaloc](http://en.wikipedia.org/wiki/Tlaloc), Aztec god of water) is a pipeline service for performing Chef runs on remote machines, placing arbitrary files (logs, compiled binaries, etc.) somewhere you can retrieve them, and sending you an email notification.
 
 Tlaloc is built on a number of technologies including Vagrant, Chef, and numerous Amazon Web Services as well as Postfix. In the future I hope to decouple from AWS, but for now, it's cheap and easy to start with.
 
@@ -16,7 +16,7 @@ There are a few requirements for this magic to happen.
 
 OS, no hard requirement, but I've only tested with:
 
-- OSX (10.9.3, but it should work so long as all the requirements do)
+- OSX (10.9.3, but anything should work so long as all the requirements do)
 
 Environment variables:
 
