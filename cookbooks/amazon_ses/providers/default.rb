@@ -6,8 +6,8 @@ end
 
 def get_connection
     return AWS::SES::Base.new(
-        access_key_id: node[:ses][:aws_access_key_id],
-        secret_access_key: node[:ses][:aws_secret_access_key]
+        access_key_id:     node[:amazon_ses][:access_key_id],
+        secret_access_key: node[:amazon_ses][:secret_access_key]
     )
 end
 
@@ -31,7 +31,7 @@ end
 action :send_raw_email do
     ses = get_connection
     ses.send_raw_email(
-        mail: @new_resource.mail
+        mail: @new_resource.mail,
         args: {
             source:      @new_resource.source,
             destination: @new_resource.destination,

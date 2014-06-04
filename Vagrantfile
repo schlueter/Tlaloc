@@ -27,7 +27,7 @@ Vagrant.configure('2') do |config|
 
     chef.custom_config_path = 'ssl_fix.chef'
     chef.json = {
-      aws: {
+      amazon_ses: {
         access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
         secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
       },
