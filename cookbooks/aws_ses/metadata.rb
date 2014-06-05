@@ -1,4 +1,4 @@
-name             'amazon_ses'
+name             'aws_ses'
 maintainer       'Schlueter'
 maintainer_email 'bs@bschlueter.com'
 license          'GPL v3'
