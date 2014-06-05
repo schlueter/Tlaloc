@@ -30,7 +30,7 @@ action :create do
     setup_connection
     S3Object.store(
         @new_resource.name,
-        @new_resource.content or open(@new_resource.file),
+        (@new_resource.content or open(@new_resource.file)),
         @new_resource.bucket
     )
 
