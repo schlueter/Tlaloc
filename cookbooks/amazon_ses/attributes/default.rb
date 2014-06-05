@@ -1,2 +1,2 @@
-default[:amazon_ses][:access_key_id]     = nil
-default[:amazon_ses][:secret_access_key] = nil
+default[:aws][:access_key_id]     = nil
+default[:aws][:secret_access_key] = nil

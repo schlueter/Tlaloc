@@ -6,8 +6,8 @@ end
 
 def get_connection
     return AWS::SES::Base.new(
-        access_key_id:     node[:amazon_ses][:access_key_id],
-        secret_access_key: node[:amazon_ses][:secret_access_key]
+        access_key_id:     node[:aws][:access_key_id],
+        secret_access_key: node[:aws][:secret_access_key]
     )
 end
 
