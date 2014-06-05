@@ -8,4 +8,6 @@ version          '0.0.1'
 
 supports         'ubuntu'
 
-depends          'amazon_ses'
+%w{ aws_ses aws_s3 }.each do |ckbk|
+    depends ckbk
+end
